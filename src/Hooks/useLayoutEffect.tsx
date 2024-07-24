@@ -5,16 +5,16 @@ const UseState = () => {
 
     useEffect(() => {
         setState('zxc_')
-    },[])
+    }, [])
 
     useLayoutEffect(() => {
         console.log(state)
         setState('zxc_')
-    },[])
+    }, [])
 
-    return ( 
+    return (
         <></>
-     );
+    );
 }
- 
+
 export default UseState;

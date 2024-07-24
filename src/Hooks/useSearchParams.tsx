@@ -4,10 +4,10 @@ const UseSearchParams = () => {
     const id = useSearchParams()
 
     console.log(id)
-    return ( 
+    return (
         <>
         </>
-     );
+    );
 }
- 
+
 export default UseSearchParams;

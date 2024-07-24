@@ -7,9 +7,9 @@ const UseRef = () => {
         console.log(divRef)
     }, [])
 
-    return ( 
+    return (
         <div ref={divRef} className="zxc"></div>
-     );
+    );
 }
- 
+
 export default UseRef;

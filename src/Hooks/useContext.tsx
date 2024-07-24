@@ -1,12 +1,12 @@
 import { createContext } from "react";
 
-const SomeContext: any = createContext('zxc')
+export const SomeContext: any = createContext('zxc')
 
-export default SomeContext
+export const Context = ({ children }: { children: any }) => {
+    const zxc: string = 'zxc'
 
-export const Context = ({children}: {children: any}) => {
     const appData: any = {
-
+        zxc: zxc
     }
 
     return <SomeContext.Provider value={appData}> {children} </SomeContext.Provider>

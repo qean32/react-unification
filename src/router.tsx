@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SomeContext from "./Hooks/useContext";
+import { Context } from "./Hooks/useContext";
 
 const Router = () => {
     return (
         <BrowserRouter>
-            <SomeContext>
+            <Context>
                 <Routes>
-                    <Route path="/" element={<h1></h1>} />
+                    <Route path="/" element={<h1>zxc</h1>} />
                 </Routes>
-            </SomeContext>
+            </Context>
         </BrowserRouter>
     );
 }

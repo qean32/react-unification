@@ -6,11 +6,11 @@ const UseState = () => {
     useEffect(() => {
         console.log(state)
         setState('zxc_')
-    },[state])
+    }, [state])
 
-    return ( 
+    return (
         <></>
-     );
+    );
 }
- 
+
 export default UseState;

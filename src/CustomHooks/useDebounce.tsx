@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useDebouse(value: any, daley: number = 400) {
+export default function useDebouce(value: any, daley: number = 400) {
     const [debousedValue, setDebousedValue] = useState<any>(value)
 
     useEffect(() => {
