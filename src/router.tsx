@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Context } from "./Hooks/useContext";
+import Main from "./components/main";
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Context>
                 <Routes>
-                    <Route path="/" element={<h1>zxc</h1>} />
+                    <Route path="/" element={<Main />} />
                 </Routes>
             </Context>
         </BrowserRouter>

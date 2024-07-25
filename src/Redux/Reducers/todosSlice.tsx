@@ -12,18 +12,20 @@ interface todo_ {
     completed: boolean
 }
 
-const defaultValue: todoState_ = {
-    todo: [],
+const initialState: todoState_ = {
+    todo: [{
+        id: 1, text: 'zxc', completed: false
+    }],
     isLoading: false,
     error: ''
 }
 
 const todosSlice: any = createSlice({
     name: 'todo',
-    initialState: defaultValue,
+    initialState,
     reducers: {
         
     },
 })
 
-export default todosSlice.reducers
+export default todosSlice.reducer
