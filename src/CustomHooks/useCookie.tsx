@@ -9,7 +9,7 @@ export default function useCookie(key: string, defaultValue: any) {
         return defaultValue
     })
 
-    const updateCookie = useCallback((newValue: any, options: any) => {
+    const updateCookie = useCallback((newValue: any, options?: any) => {
         Cookies.set(key, newValue, options)
         setValue(newValue)
     }, [])

@@ -1,7 +1,16 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { reducer } from "./ReduxStore";
-import { composeWithDevTools } from "@redux-devtools/extension";
+import todoReducer from "./Reducers/todoReducer";
 
-const rootreducer = combineReducers({reducer})
+const rootReducer = combineReducers({
+    todoReducer
+})
 
-export const store: any = configureStore({reducer: rootreducer}, composeWithDevTools)
+export const setupStore = () => {
+    return configureStore({
+        reducer: rootReducer
+    })
+}
+
+export type rootState = ReturnType<typeof rootReducer>
+export type AppStore = ReturnType<typeof setupStore>
+export type AppDispatch = AppStore['dispatch']

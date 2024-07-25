@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 
 const UseState = () => {
-    const [state, setState] = useState<any>('zxc')
+    const [state, setState] = useState<string>('zxc')
 
     useEffect(() => {
         setState('zxc_')
