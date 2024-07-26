@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Context } from "./Hooks/useContext";
-import Main from "./components/main";
+import Main from "./screens/main";
 
 const Router = () => {
     return (

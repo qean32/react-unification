@@ -1,31 +1,48 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface todoState_ {
-    todo: todo_[]
+interface UsersState {
+    users: IUser[]
     isLoading: boolean
     error: string
+    count: number
 }
 
-interface todo_ {
+interface IUser {
     id: number,
     text: string,
     completed: boolean
 }
 
-const initialState: todoState_ = {
-    todo: [{
+const initialState: UsersState = {
+    users: [{
         id: 1, text: 'zxc', completed: false
     }],
     isLoading: false,
-    error: ''
+    error: '',
+    count: 23
 }
 
-const todosSlice: any = createSlice({
+const usersSlice: any = createSlice({
     name: 'todo',
     initialState,
     reducers: {
-        
+        increment(state, action) {
+            state.count += 1
+        },
+        userFatching(state, action) {
+            state.isLoading = true
+        },
+        userFatchingSuccess(state, action) {
+            state.isLoading = true
+            state.error = ''
+            state.users = action.payload
+        },
+        userFatchingError(state, action) {
+            state.isLoading = false
+            state.error = action.payload
+        }
     },
 })
 
-export default todosSlice.reducer
+export default usersSlice.reducer
+export const { increment, userFatching, userFatchingSuccess, userFatchingError } = usersSlice.actions
