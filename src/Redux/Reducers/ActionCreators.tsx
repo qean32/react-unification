@@ -1,5 +1,5 @@
 import { AppDispatch } from ".."
-import { userFatching, userFatchingError, userFatchingSuccess } from "./todosSlice"
+import { userFatching, userFatchingError, userFatchingSuccess } from "./UserSlice"
 
 export const fetchUsers = async (dispatch: AppDispatch) => {
     dispatch(userFatching())

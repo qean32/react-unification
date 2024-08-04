@@ -1,13 +1,16 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import usersReducer from "./Reducers/todosSlice";
+import usersReducer from "./Reducers/UserSlice";
+import { cashServices } from "./Services/cashServices";
 
 export const rootReducer = combineReducers({
-    todos: usersReducer
+    users: usersReducer,
+    [cashServices.reducerPath]: cashServices.reducer,
 })
 
 export const setupStore = () => {
     return configureStore({
-        reducer: rootReducer
+        reducer: rootReducer,
+        middleware: (getDefaulMiddelware: any) => getDefaulMiddelware().concat(cashServices.middleware)
     })
 }
 

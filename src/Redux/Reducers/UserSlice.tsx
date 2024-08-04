@@ -1,41 +1,34 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import IUser from "../../models/IUser";
 
-interface UsersState {
+interface UserState {
     users: IUser[]
     isLoading: boolean
     error: string
     count: number
 }
 
-interface IUser {
-    id: number,
-    text: string,
-    completed: boolean
-}
-
-const initialState: UsersState = {
-    users: [{
-        id: 1, text: 'zxc', completed: false
-    }],
+const initialState: UserState = {
+    users: [],
     isLoading: false,
     error: '',
     count: 23
 }
 
-const usersSlice: any = createSlice({
+const userSlice: any = createSlice({
     name: 'todo',
     initialState,
     reducers: {
-        increment(state, action) {
+        increment(state) {
             state.count += 1
         },
-        userFatching(state, action) {
+        userFatching(state) {
             state.isLoading = true
         },
-        userFatchingSuccess(state, action) {
+        userFatchingSuccess(state, action: PayloadAction<any[]>) {
             state.isLoading = true
             state.error = ''
-            state.users = action.payload
+            state.users = [...state.users, ...action.payload]
         },
         userFatchingError(state, action) {
             state.isLoading = false
@@ -44,5 +37,5 @@ const usersSlice: any = createSlice({
     },
 })
 
-export default usersSlice.reducer
-export const { increment, userFatching, userFatchingSuccess, userFatchingError } = usersSlice.actions
+export default userSlice.reducer
+export const { increment, userFatching, userFatchingSuccess, userFatchingError } = userSlice.actions

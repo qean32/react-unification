@@ -1,4 +1,4 @@
-export default function useDETRequest(link: string, host: string, setValue: Function) {
+export default function useGETRequest(link: string, host: string, setValue: Function) {
     const link_ = `${host}${link}`
     fetch(link_, {
         method: 'GET',

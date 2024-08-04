@@ -9,7 +9,7 @@ interface action_ {
 
 const defaultValue: state_ = {
     users: []
-    
+
 }
 
 const POST_USER = 'POST_USER'
