@@ -4,8 +4,13 @@ import Router from './router'
 import { Provider } from 'react-redux'
 import { setupStore } from './Redux'
 
+import { QueryClient, QueryClientProvider } from 'react-query'
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={setupStore()}>
-    <Router />
+    <QueryClientProvider client={queryClient}>
+      <Router />
+    </QueryClientProvider>
   </Provider>
 )

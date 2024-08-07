@@ -15,31 +15,33 @@ export default function useGETRequest(link: string, host: string, setValue: Func
         })
 }
 
-// const Request = async (setValue: Function) => {
-//     const response = await fetch('', {
-//         method: 'GET',
-//         headers: {
-//             'Content-type': 'application/json',
-//         },
-//     })
-//     const data = await response.json()
-//     setValue(data.results)
-// }
+export const useGETRequest_ = async (link: string, host: string, setValue: Function) => {
+    const link_ = `${host}${link}`
+    const response = await fetch(link_, {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
+        },
+    })
+    const data = await response.json()
+    setValue(data.results)
+}
 
+export const useGETRequest__ = async (link: string, host: string, setValue: Function) => {
+    try {
+        const link_ = `${host}${link}`
+        const response = await fetch(link_, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+            },
+        })
+        const data = await response.json()
+        setValue(data.results)
+    }
+    catch {
 
-// try {
-//     const Request = async (setValue: Function) => {
-//         const response = await fetch('', {
-//             method: 'GET',
-//             headers: {
-//                 'Content-type': 'application/json',
-//             },
-//         })
-//         const data = await response.json()
-//         setValue(data.results)
-//     }
-// } catch {
+    } finally {
 
-// } finally {
-
-// }
+    }
+}

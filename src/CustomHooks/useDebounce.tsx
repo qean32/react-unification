@@ -13,3 +13,7 @@ export default function useDebouce(value: any, daley: number = 400) {
 
     return debousedValue;
 }
+
+// const [query, setQuery] = useState<string>('')
+// const debousedValue = useDebouce(query, 500)
+

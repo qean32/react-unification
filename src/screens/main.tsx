@@ -2,7 +2,7 @@ interface props_ {
 
 }
 
-const Main = ({ }: props_) => {
+const Main = ({  }: props_) => {
 
     return (
         <>

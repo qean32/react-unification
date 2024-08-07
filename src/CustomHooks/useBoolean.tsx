@@ -10,4 +10,4 @@ export default function useBoolean(defaultValue: boolean) {
     return [toggle, toggleFn]
 }
 
-// const [view, toddle] = useBoolean(false)
+// const [view, toggle] = useBoolean(false)

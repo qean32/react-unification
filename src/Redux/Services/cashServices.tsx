@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import useLocalStorege from "../../CustomHooks/useLocalStorege";
 
-const token = useLocalStorege('token', null)
+const token = localStorage.getItem("token")
 
 export const cashServices = createApi({
     reducerPath: 'cashServices',
