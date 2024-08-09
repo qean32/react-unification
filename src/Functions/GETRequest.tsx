@@ -1,6 +1,5 @@
-export default function useGETRequest(link: string, host: string, setValue: Function) {
-    const link_ = `${host}${link}`
-    fetch(link_, {
+export function GETRequest(link: string, host: string, setValue: Function) {
+    fetch(`${host}${link}`, {
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
@@ -15,9 +14,8 @@ export default function useGETRequest(link: string, host: string, setValue: Func
         })
 }
 
-export const useGETRequest_ = async (link: string, host: string, setValue: Function) => {
-    const link_ = `${host}${link}`
-    const response = await fetch(link_, {
+export const GETRequest_ = async (link: string, host: string, setValue: Function) => {
+    const response = await fetch(`${host}${link}`, {
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
@@ -27,10 +25,9 @@ export const useGETRequest_ = async (link: string, host: string, setValue: Funct
     setValue(data.results)
 }
 
-export const useGETRequest__ = async (link: string, host: string, setValue: Function) => {
+export const GETRequest__ = async (link: string, host: string, setValue: Function) => {
     try {
-        const link_ = `${host}${link}`
-        const response = await fetch(link_, {
+        const response = await fetch(`${host}${link}`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',

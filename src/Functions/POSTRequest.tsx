@@ -1,4 +1,4 @@
-export default function usePOSTRequest(link: string, host: string, setValue: Function, body_: object) {
+export default function POSTRequest(link: string, host: string, setValue: Function, body_: object, isArray: boolean = true) {
     const link_ = `${host}${link}`
 
     fetch(link_, {
@@ -10,6 +10,7 @@ export default function usePOSTRequest(link: string, host: string, setValue: Fun
     })
         .then((response) => response.json())
         .then((data) => {
+            if (isArray) { setValue((prew: any[]) => [...prew, data]); return }
             setValue(data)
         })
         .catch(() => {
