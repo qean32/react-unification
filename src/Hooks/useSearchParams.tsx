@@ -1,13 +1,16 @@
 import { useSearchParams } from "react-router-dom";
 
-const UseSearchParams = () => {
-    const id = useSearchParams()
+type Props = {
+ 
+}
+export const UseSearchParams = ({}: Props) => {
+  let [searchParams, setSearchParams] = useSearchParams()
 
-    console.log(id)
-    return (
-        <>
-        </>
+
+  // return value to url on set
+    return ( 
+        <div>
+            
+        </div>
     );
 }
-
-export default UseSearchParams;

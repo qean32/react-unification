@@ -1,14 +1,15 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 
-const UseState = () => {
+const UseLayoutEffect = () => {
     const [state, setState] = useState<string>('zxc')
 
     useEffect(() => {
-        setState('zxc_')
+        console.log(state)
     }, [])
 
     useLayoutEffect(() => {
         console.log(state)
+        
         setState('zxc_')
     }, [])
 
@@ -17,4 +18,4 @@ const UseState = () => {
     );
 }
 
-export default UseState;
+export default UseLayoutEffect;
