@@ -1,0 +1,1 @@
+export const zxc = {age: '23'}
